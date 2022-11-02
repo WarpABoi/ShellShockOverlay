@@ -48,6 +48,7 @@ partial class Form1
         this.vTrackBar = new System.Windows.Forms.TrackBar();
         this.pic_Overlay = new System.Windows.Forms.PictureBox();
         this.chk_AutoCalc = new System.Windows.Forms.CheckBox();
+        this.txt_Path = new System.Windows.Forms.TextBox();
         this.SuspendLayout();
 
 
@@ -58,8 +59,8 @@ partial class Form1
         this.num_Angle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         this.num_Angle.ValueChanged += new System.EventHandler(this.num_Angle_ValueChanged);
         this.num_Angle.Value = 45;
-        this.num_Angle.Maximum = 89;
-        this.num_Angle.Minimum = -89;
+        this.num_Angle.Maximum = 360;
+        this.num_Angle.Minimum = -360;
         this.Controls.Add(this.num_Angle);
 
 
@@ -70,8 +71,6 @@ partial class Form1
         this.num_Power.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
         this.num_Power.ValueChanged += new System.EventHandler(this.num_Power_ValueChanged);
         this.num_Power.Value = 100;
-        this.num_Power.Maximum = 100;
-        this.num_Power.Minimum = 1;
         this.Controls.Add(this.num_Power);
 
 
@@ -90,9 +89,9 @@ partial class Form1
         this.hTrackBar.Size = new System.Drawing.Size(1920, 45);
         this.hTrackBar.TabIndex = 4;
         this.hTrackBar.ValueChanged += new System.EventHandler(this.hTrackBar_ValueChanged);
-        this.hTrackBar.Maximum = 100;
+        this.hTrackBar.Maximum = 1000;
         this.hTrackBar.Minimum = 0;
-        this.hTrackBar.Value = 50;
+        this.hTrackBar.Value = 500;
         this.Controls.Add(this.hTrackBar);
 
 
@@ -101,11 +100,31 @@ partial class Form1
         this.vTrackBar.Size = new System.Drawing.Size(45, 1080);
         this.vTrackBar.TabIndex = 5;
         this.vTrackBar.ValueChanged += new System.EventHandler(this.vTrackBar_ValueChanged);
-        this.vTrackBar.Maximum = 100;
+        this.vTrackBar.Maximum = 1000;
         this.vTrackBar.Minimum = 0;
-        this.vTrackBar.Value = 50;
+        this.vTrackBar.Value = 500;
         this.vTrackBar.Orientation = System.Windows.Forms.Orientation.Vertical;
         this.Controls.Add(this.vTrackBar);
+
+
+        this.chk_AutoCalc.Location = new System.Drawing.Point(50, 140);
+        this.chk_AutoCalc.Name = "chk_AutoCalc";
+        this.chk_AutoCalc.Size = new System.Drawing.Size(80, 23);
+        this.chk_AutoCalc.TabIndex = 7;
+        this.chk_AutoCalc.Text = "AutoCalc";
+        this.chk_AutoCalc.ForeColor = System.Drawing.Color.White;
+        this.chk_AutoCalc.UseVisualStyleBackColor = true;
+        this.chk_AutoCalc.Checked = false;
+        this.Controls.Add(this.chk_AutoCalc);
+
+
+        this.txt_Path.Location = new System.Drawing.Point(50, 170);
+        this.txt_Path.Name = "txt_Path";
+        this.txt_Path.Size = new System.Drawing.Size(80, 23);
+        this.txt_Path.TabIndex = 8;
+        this.txt_Path.PlaceholderText = "Path";
+        this.txt_Path.TextChanged += new System.EventHandler(this.txt_Path_TextChanged);
+        this.Controls.Add(this.txt_Path);
 
 
         this.pic_Overlay.Location = new System.Drawing.Point(0, 0);
@@ -115,16 +134,6 @@ partial class Form1
         this.pic_Overlay.TabStop = false;
         this.pic_Overlay.BackColor = System.Drawing.Color.Transparent;
         this.Controls.Add(this.pic_Overlay);
-
-
-        this.chk_AutoCalc.Location = new System.Drawing.Point(50, 140);
-        this.chk_AutoCalc.Name = "chk_AutoCalc";
-        this.chk_AutoCalc.Size = new System.Drawing.Size(80, 23);
-        this.chk_AutoCalc.TabIndex = 7;
-        this.chk_AutoCalc.Text = "AutoCalc";
-        this.chk_AutoCalc.UseVisualStyleBackColor = true;
-        this.chk_AutoCalc.Checked = false;
-        this.Controls.Add(this.chk_AutoCalc);
     }
 
     #endregion
@@ -136,4 +145,5 @@ partial class Form1
     private TrackBar vTrackBar;
     private PictureBox pic_Overlay;
     private CheckBox chk_AutoCalc;
+    private TextBox txt_Path;
 }
